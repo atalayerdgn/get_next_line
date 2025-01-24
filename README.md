@@ -32,6 +32,37 @@ int main() {
 
 ```
 
+### Static Variables in Global Scope:
+When a static variable is declared outside a function, its scope is limited to the file in which it is declared. This is useful for creating private variables in a file.
+
+
+Example:
+```C
+static int secret = 42; // Accessible only within this file
+
+void reveal_secret() {
+    printf("The secret is: %d\n", secret);
+}
+```
+
+
+### Static Functions:
+A function declared with the static keyword has file-level scope, meaning it is only accessible within the file in which it is defined. This is useful for encapsulation and avoiding symbol conflicts in larger programs.
+
+
+Example:
+```C
+static void helper_function() {
+    printf("This is a static function.\n");
+}
+
+void public_function() {
+    helper_function(); // Can be called here
+}
+```
+
+
+
 ## Example main.c
 
 
@@ -47,8 +78,6 @@ int main(void){
     printf("%s",get_next_line(fd)); // getting the first line
     printf("%s",get_next_line(fd)); // getting the second line
 }
-
-
 
 
 ```
